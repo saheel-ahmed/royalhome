@@ -1,7 +1,7 @@
 Vue.component('header-layout', {
     template: `
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <router-link class="navbar-brand" to="/">Royal Homes</router-link>
+        <router-link class="navbar-brand" to="https://saheel-ahmed.github.io/royalhome">Royal Homes</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" @click="toggleMenu()">
             <span class="navbar-toggler-icon"></span>
         </button>  
