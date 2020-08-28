@@ -67,7 +67,7 @@ var Properties = {
         fetchData: function() {
             let self = this;
 
-            $.getJSON('http://royalhome.ae/api/properties/', function(res) {
+            $.getJSON('https://royalhome.ae/api/properties/', function(res) {
                 self.properties = res.Listing;
                 self.loading = false;
             });
