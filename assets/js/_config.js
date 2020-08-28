@@ -1,4 +1,4 @@
-const baseURL = 'https://saheel-ahmed.github.io/royalhome/';
+const baseURL = '/';
 const routes = [{
     path: '/',
     component: Properties
