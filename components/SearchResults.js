@@ -1,4 +1,4 @@
-var Properties = {
+var SearchResults = {
     template: `
         <div>
            <header-layout></header-layout>
@@ -17,8 +17,11 @@ var Properties = {
                     </div>
            </div>
            <div class="container mt-4">
-            <div class="row">
-                <div class="col-sm-4 ml-auto text-right mb-3">
+            <div class="row align-items-center mb-3">
+            <div class="col-sm-8">
+                <h3 class="mb-0">{{properties.length}} result found</h3>
+            </div>
+                <div class="col-sm-4 text-right">
                 <span>Sort By:</span>
                 <select v-model="sortby" class="sort-select" @change="sortChange()">
                 <option value="0">Default Order</option>
@@ -94,7 +97,25 @@ var Properties = {
         fetchData: function() {
             let self = this;
             $.getJSON('https://royalhome.ae/api/properties/', function(res) {
-                self.properties = res.Listing.filter(i=>i.Ad_Type.toLowerCase() == self.$route.params.type.toLowerCase());
+                debugger;
+                if(self.$route.query.type != '1'){
+                    if(self.$route.query.type == '2'){
+                        self.properties = res.Listing.filter(i=>i.Ad_Type.toLowerCase() == 'rent');
+                    }else{
+                        self.properties = res.Listing.filter(i=>i.Ad_Type.toLowerCase() == 'sale');
+                    }
+                    
+                }else{
+                    self.properties = res.Listing;
+                }
+                
+                if(self.$route.query.unittype != ''){
+                    self.properties = self.properties.filter(i=>i.Unit_Type.toLowerCase() == self.$route.query.unittype.toLowerCase());
+                }
+
+                if(self.$route.query.bedroom != '' ){
+                    self.properties = self.properties.filter(i=> parseInt(i.No_of_Rooms) == parseInt(self.$route.query.bedroom));
+                }
                 self.loading = false;
             });
 
