@@ -1,6 +1,6 @@
 Vue.component('header-layout', {
     template: `
-    <nav class="navbar navbar-dark navbar-expand-lg navbar-custom" v-bind:class="{ inner: isHome == false}">
+    <nav class="navbar navbar-dark navbar-expand-lg navbar-custom" v-bind:class="{ inner: isHome == false, 'navbar-light': isHome == false}">
         <div class="container">
         <router-link class="navbar-brand" to="/">
             <img v-if="isHome" src="./assets/imgs/logo-white.png"/>

@@ -498,4 +498,13 @@ body {
         display: block !important;
     width: 100%;
     }
+    .page-title-wrap {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .property-title-price-wrap {
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start !important;
+    }
 }

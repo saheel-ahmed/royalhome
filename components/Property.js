@@ -30,7 +30,7 @@ var Property = {
                    <img class="img-fluid" v-bind:src="properties.Images.image[0]" alt="">
                    </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 d-none d-sm-block">
                    <a v-bind:href="properties.Images.image[1]" data-toggle="lightbox" data-gallery="property-lightbox" data-type="image" class="swipebox img-wrap-2">
                    <img class="img-fluid" v-bind:src="properties.Images.image[1]" alt="">
                    </a>
