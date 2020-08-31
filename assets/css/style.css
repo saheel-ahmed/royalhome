@@ -480,12 +480,22 @@ body {
     }
 
     .navbar-collapse.show {
-        position: absolute;
+        /* position: absolute; */
         top: 80px;
         right: 8px;
         left: 8px;
         background: #58afff;
         padding: 10px;
         border-radius: 4px;
+    }
+    .property-overview-data ul {
+        width: 49%;
+        display: inline-block !important;
+        padding: 10px;
+    }
+
+    .property-overview-data{
+        display: block !important;
+    width: 100%;
     }
 }
